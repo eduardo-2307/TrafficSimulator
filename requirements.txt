@@ -1,6 +1,6 @@
 bokeh==2.2.3
 freegames==2.3.2
-Jinja2==2.11.2
+Jinja2>=2.0.0
 MarkupSafe==1.1.1
 numpy==1.19.4
 packaging==20.8
@@ -15,4 +15,4 @@ scipy==1.7.3
 six==1.15.0
 tornado==6.1
 typing-extensions==3.7.4.3
-flask==2.0.2
+flask>=1.0.0
