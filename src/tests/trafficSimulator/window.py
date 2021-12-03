@@ -15,7 +15,7 @@ class Window:
         """Set default configuration"""
         self.width = 1400
         self.height = 900
-        self.bg_color = (250, 250, 250)
+        self.bg_color = (66, 184, 45)
 
         self.fps = 60
         self.zoom = 5
@@ -136,8 +136,8 @@ class Window:
         if filled:
             gfxdraw.filled_polygon(self.screen, vertices, color)
 
-    def rotated_box(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(0, 0, 255), filled=True):
-        
+    def rotated_box(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(47, 243, 225), filled=True):
+        #Car color
         x, y = pos
         l, h = size
 
@@ -163,7 +163,7 @@ class Window:
     def rotated_rect(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(0, 0, 255)):
         self.rotated_box(pos, size, angle=angle, cos=cos, sin=sin, centered=centered, color=color, filled=False)
 
-    def arrow(self, pos, size, angle=None, cos=None, sin=None, color=(150, 150, 190)):
+    def arrow(self, pos, size, angle=None, cos=None, sin=None, color=(236, 255, 0)):
         if angle:
             cos, sin = np.cos(angle), np.sin(angle)
         
@@ -200,27 +200,27 @@ class Window:
             color
         )
 
-    def draw_grid(self, unit=50, color=(150,150,150)):
-        x_start, y_start = self.inverse_convert(0, 0)
-        x_end, y_end = self.inverse_convert(self.width, self.height)
+    # def draw_grid(self, unit=50, color=(150,150,150)):####
+    #     x_start, y_start = self.inverse_convert(0, 0)
+    #     x_end, y_end = self.inverse_convert(self.width, self.height)
 
-        n_x = int(x_start / unit)
-        n_y = int(y_start / unit)
-        m_x = int(x_end / unit)+1
-        m_y = int(y_end / unit)+1
+    #     n_x = int(x_start / unit)
+    #     n_y = int(y_start / unit)
+    #     m_x = int(x_end / unit)+1
+    #     m_y = int(y_end / unit)+1
 
-        for i in range(n_x, m_x):
-            self.line(
-                self.convert((unit*i, y_start)),
-                self.convert((unit*i, y_end)),
-                color
-            )
-        for i in range(n_y, m_y):
-            self.line(
-                self.convert((x_start, unit*i)),
-                self.convert((x_end, unit*i)),
-                color
-            )
+    #     for i in range(n_x, m_x):
+    #         self.line(
+    #             self.convert((unit*i, y_start)),
+    #             self.convert((unit*i, y_end)),
+    #             color
+    #         )
+    #     for i in range(n_y, m_y):
+    #         self.line(
+    #             self.convert((x_start, unit*i)),
+    #             self.convert((x_end, unit*i)),
+    #             color
+    #         )
 
     def draw_roads(self):
         for road in self.sim.roads:
@@ -230,7 +230,7 @@ class Window:
                 (road.length, 3.7),
                 cos=road.angle_cos,
                 sin=road.angle_sin,
-                color=(180, 180, 220),
+                color=(58, 58, 58),
                 centered=False
             )
             
