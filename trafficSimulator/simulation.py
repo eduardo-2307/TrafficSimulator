@@ -75,3 +75,4 @@ class Simulation:
     def run(self, steps):
         for _ in range(steps):
             self.update()
+            

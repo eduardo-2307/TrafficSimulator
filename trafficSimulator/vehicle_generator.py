@@ -13,7 +13,7 @@ class VehicleGenerator:
         self.init_properties()
 
     def set_default_config(self):
-        """Set default configuration"""
+        
         self.vehicle_rate = 20
         self.vehicles = [
             (1, {})
@@ -24,7 +24,7 @@ class VehicleGenerator:
         self.upcoming_vehicle = self.generate_vehicle()
 
     def generate_vehicle(self):
-        """Returns a random vehicle from self.vehicles with random proportions"""
+        
         total = sum(pair[0] for pair in self.vehicles)
         r = randint(1, total+1)
         for (weight, config) in self.vehicles:
@@ -33,7 +33,7 @@ class VehicleGenerator:
                 return Vehicle(config)
 
     def update(self):
-        """Add vehicles"""
+        
         if self.sim.t - self.last_added_time >= 60 / self.vehicle_rate:
         
             road = self.sim.roads[self.upcoming_vehicle.path[0]]      
