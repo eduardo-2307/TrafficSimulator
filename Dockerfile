@@ -15,6 +15,4 @@ COPY . /app
 
 ENTRYPOINT [ "python" ]
 
-CMD [ "hello.py" ]
-© 2021 GitHub, Inc.
-Terms
+CMD [ "test_2.py" ]
